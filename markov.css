@@ -1,0 +1,13 @@
+
+body
+{
+	background-color: #e9ecef;
+}
+
+#mainRow
+{
+	background-color: white;
+	padding-top: 80px;
+	padding-bottom: 80px;
+	margin-left: -300px;
+}
