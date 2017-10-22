@@ -46,6 +46,11 @@ for(var i = 0; i < words.length; i++)
 	learnWord(chain, words[i]);
 }
 
-var word = buildWord(chain);
-word = word[0].toUpperCase() + word.slice(1);
-document.getElementById("word").textContent = word;
+function showWord()
+{
+	var word = buildWord(chain);
+	word = word[0].toUpperCase() + word.slice(1);
+	document.getElementById("word").textContent = word;
+}
+
+showWord();
