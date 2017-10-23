@@ -28,13 +28,18 @@
 					</li>
 				</ul>
 				<div class="tab-content" id="pills-tabContent">
-					<div class="tab-pane show active" id="pills-constants" role="tabpanel">Hello</div>
+					<div class="tab-pane show active" id="pills-constants" role="tabpanel">
+					<div class="form-group">
+						<label>Max Word Length</label>
+						<input class="form-control" type="text" id="max_chars">
+					</div>
+					</div>
 					<div class="tab-pane" id="pills-corpus" role="tabpanel">Hi</div>
 				</div>
 			</div>
 			<div class="modal-footer">
         		<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        		<button type="button" class="btn btn-primary">Save changes</button>
+        		<button type="button" class="btn btn-primary" onclick="saveSettings()">Save changes</button>
       		</div>
 		</div>
 	</div>
@@ -45,7 +50,7 @@
 		<h1 id="word">Word</h1>
 		<p></p>
 		<button type="button" class="btn btn-primary" onclick="showWord()">Generate</button>
-		<button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#myModal">Settings</button>
+		<button type="button" class="btn btn-outline-secondary" onclick="getSettings()" data-toggle="modal" data-target="#myModal">Settings</button>
 		<hr>
 		<p class="subtext">Markov chain word generator</p>
 	</div>

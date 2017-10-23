@@ -8,6 +8,16 @@ var starts = [];
 var MAX_LENGTH = 20;
 var NGRAM = 2;
 
+function saveSettings()
+{
+	MAX_LENGTH = $('#max_chars').val();
+}
+
+function getSettings()
+{
+	$('#max_chars').val(MAX_LENGTH);
+}
+
 function learnWord(chain, word)
 {
 	starts.push(word.slice(0, NGRAM));
