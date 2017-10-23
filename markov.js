@@ -11,6 +11,8 @@ var NGRAM = 2;
 function saveSettings()
 {
 	MAX_LENGTH = $('#max_chars').val();
+
+	$('#myModal').modal('hide');
 }
 
 function getSettings()
