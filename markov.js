@@ -1,11 +1,11 @@
 
-
-
 var chain = {};
 var words = ["sodium", "magnesium", "potassium", "helium", "lithium", "calcium", "yttrium", "titanium", "chromium", "palladium", "tantalum", "hafnium", "indium", "thallium", 
 	"selenium", "gallium", "platinum", "polomium", "barium", "radium", "francium", "strontium", "rutherfordium", "dubnium", "seaborgium", "hassium", "copernicium", "uranium",
 	"plutonium", "curium", "fermium", "nobelium", "erbium", "berkelium", "indium", "iridium", "lutetium", "meitnerium", "neobymium", "niobium", "osmium"];
 var starts = [];
+
+var maxLength = 20;
 
 function learnWord(chain, word)
 {
@@ -35,7 +35,7 @@ function buildWord(chain)
 			return word;
 		next = nextArray[Math.floor(Math.random() * nextArray.length)]
 		word += next;
-		if(word.length > 30)
+		if(word.length > maxLength)
 			return word;
 		console.log(word);
 	}
