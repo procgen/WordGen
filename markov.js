@@ -48,7 +48,7 @@ function buildWord(chain)
 			return word;
 		next = nextArray[Math.floor(Math.random() * nextArray.length)]
 		word += next;
-		if(word.length > MAX_LENGTH)
+		if(word.length >= MAX_LENGTH)
 			return word;
 		console.log(word);
 	}
