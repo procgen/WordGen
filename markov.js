@@ -11,13 +11,19 @@ var NGRAM = 2;
 function saveSettings()
 {
 	MAX_LENGTH = $('#max_chars').val();
-
+	NGRAM = parseInt($('input[name="ngramRadio"]:checked').val());
+	console.log("NGRAM set to " + NGRAM);
+	console.log(MAX_LENGTH);
 	$('#myModal').modal('hide');
+
+	learnCorpus(chain, words);
+	showWord();
 }
 
 function getSettings()
 {
 	$('#max_chars').val(MAX_LENGTH);
+	$('#ngramRadio' + NGRAM).prop("checked", "checked");
 }
 
 function learnWord(chain, word)
@@ -35,7 +41,6 @@ function learnWord(chain, word)
 			chain[key].push(word[i + NGRAM]);
 		}
 	}
-	console.log(chain);
 }
 
 function buildWord(chain)
@@ -50,14 +55,20 @@ function buildWord(chain)
 		word += next;
 		if(word.length >= MAX_LENGTH)
 			return word;
-		console.log(word);
 	}
 }
 
-for(var i = 0; i < words.length; i++)
+function learnCorpus(chain, words)
 {
-	learnWord(chain, words[i]);
+	starts = [];
+	for(var i = 0; i < words.length; i++)
+	{
+		learnWord(chain, words[i]);
+	}
+	console.log(chain);
 }
+
+learnCorpus(chain, words);
 
 function showWord()
 {
