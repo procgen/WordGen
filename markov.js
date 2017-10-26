@@ -78,8 +78,6 @@ function learnCorpus(words)
 	return chain;
 }
 
-chain = learnCorpus(words);
-
 function showWord()
 {
 	var word = buildWord(chain);
@@ -87,4 +85,6 @@ function showWord()
 	document.getElementById("word").textContent = word;
 }
 
+
+chain = learnCorpus(words);
 showWord();
