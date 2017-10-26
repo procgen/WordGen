@@ -14,10 +14,10 @@ function saveSettings()
 	NGRAM = parseInt($('input[name="ngramRadio"]:checked').val());
 
 	var corpusText = $("#corpusTextArea").val();
+	corpusText = corpusText.replace(/[\s]{2,}|[\n\r]+/g, " ");
 	words = corpusText.split(" ");
 
 	$('#myModal').modal('hide');
-
 	chain = learnCorpus(words);
 	showWord();
 }
